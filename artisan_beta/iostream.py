@@ -19,5 +19,5 @@ def survey(path,filepattern):
             if filepattern in filename:
                 filepath = "{}/{}".format(dirpath,filename)
                 filepaths_ALL.append(filepath)
-    print("A total of ", len(filepaths_ALL)," ", filename, "files are detected")
+    print("A total of ",len(filepaths_ALL),filepattern," files are detected")
     return filepaths_ALL
