@@ -1,0 +1,6 @@
+README.md
+setup.py
+Artisan.egg-info/PKG-INFO
+Artisan.egg-info/SOURCES.txt
+Artisan.egg-info/dependency_links.txt
+Artisan.egg-info/top_level.txt
