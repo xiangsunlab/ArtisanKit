@@ -3,6 +3,7 @@ A Productivity Toolkit for Craftsman/woman Doing Research in Computational Chemi
 
 
 ## Installation
-> pip install ArtisanKit
-
+```
+pip install ArtisanKit
+```
 
