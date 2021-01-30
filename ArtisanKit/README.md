@@ -1,3 +1,3 @@
-# Artisan Package
+# ArtisanKit Package
 
-This is the beginning of the Artisan package.
+This is the beginning of the ArtisanKit package.
