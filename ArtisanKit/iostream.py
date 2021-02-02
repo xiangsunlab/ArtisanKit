@@ -33,7 +33,7 @@ def survey(path,filepattern):
 # Survey all files under path directory
     filepaths_ALL = []
     #Path = "/home/user/rundir/workdir"
-    for (dirpath, dirnames, filenames) in os.walk(path):
+    for (dirpath,filenames) in os.walk(path):
         for filename in filenames:
             if filepattern in filename:
                 filepath = "{}/{}".format(dirpath,filename)

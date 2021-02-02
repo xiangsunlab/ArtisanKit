@@ -17,3 +17,9 @@
 # for all uses of the software, to the fullest extent permitted by applicable law.               #
 #------------------------------------------------------------------------------------------------#
 """ArtisanKit Plotting Canvas."""
+
+
+class plotting:
+    def __init__(self,parm1,parm2):
+        self.parm1 = "x"
+        self.parm2 = "y"
