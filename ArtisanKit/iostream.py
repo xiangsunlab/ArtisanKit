@@ -40,3 +40,28 @@ def survey(path,filepattern):
                 filepaths_ALL.append(filepath)
     print("A total of ",len(filepaths_ALL),filepattern," files are detected")
     return filepaths_ALL
+
+def print_dec(before,answer,after,dec):
+    '''
+    before = anything before scalar value
+    answer = scalar values with many decimals you want to truncate
+    after = anything after scalar value
+    dec = the number of decimal points you want to show
+    Usage example
+    ------------------------------------------------------------
+    >>> myvalue = 1.23829342
+    >>> print("This is normal printing " ,myvalue )
+    >>> print_dec("This print only 4 decimal points", myvalue , ",not bad right?", 4) 
+    This is normal printing  1.23829342
+
+    This print only 4 decimal points 1.2383 ,not bad right?.
+    ------------------------------------------------------------
+    print_dec("Give me 4 point decimals", 1.23829342, "so it is 4 decimals now", 4)
+    : introduces the format spec
+    0 enables sign-aware zero-padding for numeric types
+    .number sets the precision to a "point" amount of decimal 
+    f displays the number as a fixed-point number
+    '''
+    point = str(dec)
+    formatter = "\n" + before + " {:0." + point + "f} " + after + "\n"
+    print(formatter.format(answer))
