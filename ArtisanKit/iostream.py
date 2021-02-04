@@ -49,7 +49,6 @@ def survey(path,filepattern):
     filepaths_ALL = []
     file_with_pattern = []
     for root,dirs,files in os.walk(path):
-        #print(dirnames) dirnames is part of the os.walk() trio
         for filename in files:
             if filepattern in filename:
                 filepath = "{}/{}".format(root,filename)
