@@ -25,21 +25,41 @@ import os
 import dask.dataframe as dd
 import pickle as pkl
 
-# mypath = '/home/user/rundir/workdir/result'
-# filepattern = '.dat'
-# myfilepaths= survey(mypath, filepattern)
 
 def survey(path,filepattern):
-# Survey all files under path directory
+    '''
+    Survey all files under path directory
+    
+    Usage example:
+    -------------------
+    >>> mypath = '../ArtisanKit/sample'
+    >>> filepattern = '.dat'
+    >>> myfilepaths= survey(mypath, filepattern)
+    A total of  3 .dat  files are detected
+
+    >>> myfilepaths
+    ['../ArtisanKit/sample/test1.dat',
+     '../ArtisanKit/sample/test2.dat',
+     '../ArtisanKit/sample/test3.dat']
+
+    >>> filelist
+    ['test1.dat', 'test2.dat', 'test3.dat']
+
+    '''
     filepaths_ALL = []
-    #Path = "/home/user/rundir/workdir"
-    for (dirpath,filenames) in os.walk(path):
-        for filename in filenames:
+    file_with_pattern = []
+    for root,dirs,files in os.walk(path):
+        #print(dirnames) dirnames is part of the os.walk() trio
+        for filename in files:
             if filepattern in filename:
-                filepath = "{}/{}".format(dirpath,filename)
+                filepath = "{}/{}".format(root,filename)
+                mypattern = "{}".format(filename)
                 filepaths_ALL.append(filepath)
+                file_with_pattern.append(mypattern)
+            if 'CVS' in dirs:
+                dirs.remove('CVS')  # don't visit CVS metadata directories
     print("A total of ",len(filepaths_ALL),filepattern," files are detected")
-    return filepaths_ALL
+    return filepaths_ALL, file_with_pattern
 
 def print_dec(before,answer,after,dec):
     '''
