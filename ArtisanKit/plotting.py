@@ -18,6 +18,27 @@
 #------------------------------------------------------------------------------------------------#
 """ArtisanKit Plotting Canvas."""
 
+def savefig(path,figname):
+    '''
+    path = path to save directory.
+    figname = filename for figures, will be saved as figname.pdf and figname.png
+    
+    Usage example:
+    -------------------
+    >>> path = "../ArtisanKit/sample/Figures/"
+    >>> figname ='Figure1'
+    saved 1 .pdf file to ../ArtisanKit/sample/Figures/Figure1.pdf
+    saved 1 .png file to ../ArtisanKit/sample/Figures/Figure1.png
+    
+    '''  
+    # update future **kwargs to modify dpi, facecolor, etc.
+    filename = ('{}/{}.pdf').format(path,figname)
+    plt.savefig(filename,dpi=300,bbox_inches='tight',transparent=False) 
+    print("saved 1 .pdf file to", filename)
+    filename = ('{}/{}.png').format(path,figname)
+    plt.savefig(filename,dpi=300,bbox_inches='tight',transparent=False,facecolor='white')
+    print("saved 1 .png file to", filename);
+
 
 class plotting:
     def __init__(self,parm1,parm2):
