@@ -17,7 +17,7 @@
 # for all uses of the software, to the fullest extent permitted by applicable law.               #
 #------------------------------------------------------------------------------------------------#
 """ArtisanKit Plotting Canvas."""
-
+import matplotlib as plt
 def savefig(path,figname):
     '''
     path = path to save directory.
